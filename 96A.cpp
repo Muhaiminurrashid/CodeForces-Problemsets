@@ -1,25 +1,23 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-    int zero=0,one=0;
-    string s;
-    cin>>s;
-    for(int i=0;i<s.size();i++){
-        if (s[i]=='0'){
-            zero++;
-            one = 0;
+ ios::sync_with_stdio(0);
+ cin.tie(0);
+ string s;
+ cin>> s;
+ int n = s.length(), k = 7;
+ for (int i= 0;i<= n-k; i++){
+    int counter = 0;
+    for(int j= i;j<= i+k-1; j++){
+        if (s[i] == s[j]){
+            counter++;
         }
-        else if (s[i]=='1'){
-            one++;
-            zero=0;
-        }
-        if (one == 7 || zero == 7){
-            cout<<"YES"<<endl;
-            return 0;
-        }
-
-    
     }
-    
- cout<<"NO"<<endl;
+    if (counter == k){
+        puts("YES");
+        return 0;
+    }
+ }
+ puts("NO");
+
 }
